@@ -1,0 +1,26 @@
+footer, .push {
+  height: 4em;
+}
+
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+
+}
+
+.home-div {
+  background: rgb(199, 241, 231);
+  padding: .7em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bi-house {
+  font-size: 1.5em;
+}
+
+
+

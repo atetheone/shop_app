@@ -1,0 +1,28 @@
+<div class="container my-3">
+  <div class="row d-flex justify-content-center">
+      <div class="h3 d-flex justify-content-center">
+          Store new palette
+      </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+      <form class="col-sm-9 col-md-6 ">
+          <div class="form-group my-2">
+              <input id="barcodeInput" type="text" class="form-control" [(ngModel)]="barcode" name="barcode" placeholder="Barcode">
+
+          </div>
+          <div class="form-group my-2">
+              <input id="productInput" type="text" class="form-control" [(ngModel)]="product" name="product" placeholder="Product">
+          </div>
+          <div class="form-group my-2">
+              <input id="amountInput" type="text" class="form-control" [(ngModel)]="amount" name="amount" placeholder="Amount">
+          </div>
+          <div class="form-group my-2">
+              <input id="locationInput" type="text" class="form-control" [(ngModel)]="location" name="location" placeholder="Location">
+          </div>
+
+          <div class="form-group my-2 ">
+                <button id="addPalette" type="submit" class="form-control btn btn-primary" (click)="addPalette()" [disabled]="!isFilled()">Save</button>
+          </div>
+        </form>
+  </div>
+</div>

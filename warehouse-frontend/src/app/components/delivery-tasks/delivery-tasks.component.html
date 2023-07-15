@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <div class="row d-flex justify-content-center my-2">
+        <div class="h3 d-flex justify-content-center">Delivery Tasks:</div>
+  
+    </div>
+
+    <div class="row d-flex justify-content-center my-2" *ngIf="deliveries.length === 0">
+      <div class="h4 d-flex justify-content-center py-3 alert alert-danger">No task, have a break</div>
+    </div>
+  
+    <div *ngIf="deliveries.length != 0" >
+      <a class="row my-2 d-flex justify-content-center" [routerLink]="['/pick-tasks/edit-pick', pick.code]"  *ngFor="let pick of deliveries">
+        <div class="col-6 d-flex justify-content-center">
+          <label>Product: {{ pick.product }}</label>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+          <label>Loc: {{ pick.locations}}</label>
+        </div>
+      </a>
+    </div>
+    <div class="row my-2">
+		<pre>
+			{{ debugString }}
+		</pre>
+	</div>
+</div>

@@ -1,0 +1,47 @@
+<form [formGroup]="formGroup" (ngSubmit)="submitOffer()" class="my-5">
+    <div class="container">
+        <div class="row d-flex justify-content-center my-2">
+            <div class="col d-flex justify-content-center h4">
+                Pick: {{ pick.product }} from {{ formGroup.get('location')?.value }}
+            </div>
+        </div> 
+    
+        <div class="row d-flex justify-content-center my-2">
+            <div class="col-9 col-sm-4 d-flex justify-content-center">
+                <input class="form-control" id="taskCode" type="text" placeholder="task id?"   formControlName = "taskCode">
+            </div>
+        </div>
+
+
+        <div class="row d-flex justify-content-center my-2">
+            <select id="locationInput"  class=" custom-select col-9 col-sm-4 form-control my-1 mr-sm-2"  placeholder="location?" formControlName = "location">
+                <option selected>Select a shelf...</option>
+                <option [value]="name" *ngFor="let name of validLocations"> {{ name }} </option>
+              </select>
+
+            <!-- <div class="col-sm-4 d-flex justify-content-center">
+                <input class="form-control" id="locationInput" type="text" placeholder="location?" formControlName = "location">
+            </div> -->
+        </div>
+
+        <div *ngIf="formGroup.get('location')?.errors && formGroup.get('location')?.dirty" 
+                class="row d-flex justify-content-center my-2">
+            <div class="col-sm-4 d-flex justify-content-center">
+                {{ debugOut }}
+            </div>
+        </div>
+    
+        <div class="row d-flex justify-content-center my-2">
+            <div class="col-sm-4 d-flex justify-content-center">
+                <button class="form-control btn btn-primary" id="doneButton" type="submit" [disabled]="!formGroup.valid">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+        <p>{{formGroup.status}} {{formGroup.errors}}</p>
+
+        <p>{{debugOut}}</p>
+
+    </div>
+</form>
