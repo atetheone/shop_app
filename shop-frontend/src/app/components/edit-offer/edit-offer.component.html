@@ -1,0 +1,51 @@
+<form [formGroup]="formGroup" (ngSubmit)="submitOffer()" class="my-5">
+    <div class="container">
+        <div class="row d-flex justify-content-center my-2">
+            <div class="col d-flex justify-content-center h4">
+                Edit offer:
+            </div>
+        </div>
+    
+        <div class="row d-flex justify-content-center my-2">
+            <div class="col-9 col-sm-4 d-flex justify-content-center">
+                <select placeholder="Product?" class=" custom-select form-control my-1 mr-sm-2"  formControlName = "productName">
+                    <option selected>Choose a product...</option>
+                    <option [value]="name" *ngFor="let name of validNames"> {{ name }} </option>
+                  </select>
+            </div>
+        </div>
+    
+        <div *ngIf="formGroup.get('productName')?.errors && formGroup.get('productName')?.dirty" 
+                class="row d-flex justify-content-center my-2">
+            <div class="col-sm-4 d-flex justify-content-center">
+                {{ debugOut }}
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center my-2">
+            <div class="col-9 col-sm-4 d-flex justify-content-center">
+                <input class="form-control" id="price" type="text" placeholder="price?" formControlName = "productPrice">
+            </div>
+        </div>
+
+        <div *ngIf="formGroup.get('productPrice')?.errors && formGroup.get('productPrice')?.dirty" 
+                class="row d-flex justify-content-center my-2">
+            <div class="col-9 col-sm-4 d-flex justify-content-center">
+                Price should be greater or equal than 0
+            </div>
+        </div>
+    
+        <div class="row d-flex justify-content-center my-2">
+            <div class="col-9 col-sm-4 d-flex justify-content-center">
+                <button class="form-control btn btn-primary" id="submitOfferButton" type="submit" [disabled]="!formGroup.valid">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+        <p>{{formGroup.status}} {{formGroup.errors}}</p>
+
+        <p>Debug <br> {{debugOut}}</p>
+
+    </div>
+</form>

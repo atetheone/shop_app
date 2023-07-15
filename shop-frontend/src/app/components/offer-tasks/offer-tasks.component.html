@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row d-flex justify-content-center my-2">
+        <div class="col d-flex justify-content-center h4">
+            Offers overview:
+        </div>
+    </div>
+
+    <div class="row my-2">
+        <div class="col d-flex justify-content-center">
+            <a class="btn btn-primary" id="edit-button" routerLink="/offer-tasks/edit-offer">Edit</a>
+        </div>
+    </div>
+
+
+    <table class="table table-striped table-hover table-bordered my-3">
+      <thead class="">
+        <tr>
+          <th scope="col">Offer</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Price</th>
+        </tr>
+        
+      </thead>
+      <tbody>
+        <tr *ngFor="let myOffer of offers">
+          <td>We offer {{ myOffer.product }}</td>
+          <td>{{ myOffer.amount }}</td>
+          <!-- <td>{{ myOffer.state }}</td> -->
+          <td>${{ myOffer.price }}</td>
+        </tr>
+
+      </tbody>
+
+
+    </table>
+    <!-- <div class="row my-2 d-flex justify-content-center" *ngFor="let myOffer of offers">
+        <div class="col-4 d-flex justify-content-center">
+            <label>We offer {{myOffer.name}}</label>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <label>{{myOffer.amount}}</label>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <label>{{myOffer.state}}</label>
+        </div>
+        <div class="col-1 d-flex justify-content-center">
+            <label>{{myOffer.price}}</label>
+        </div>
+    </div> -->
+
+    <div class="row my-2">
+        <pre>
+            {{storeTaskString}}
+        </pre>
+    </div>  
+<!-- 
+    <div class="row my-2">
+        {{getResult}} {{storeTaskString}}
+    </div>  
+-->  
+</div>

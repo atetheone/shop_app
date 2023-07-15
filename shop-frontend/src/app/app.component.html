@@ -1,0 +1,30 @@
+<div class="wrapper">
+	<nav class="home-div">
+		<div class="d-flex flex-row">
+			<a class="btn btn-primary mx-2" routerLink="/home"> <i class="bi-house"></i></a>
+			<div class="h1">Micro Shop</div>
+		</div>
+		<div class="">
+			<a [href]="frontWarehouse" class="btn btn-outline-success"> Visit the Warehouse</a>
+		</div>
+	</nav>
+
+
+
+	<ngbx-toast-list></ngbx-toast-list>
+	<router-outlet></router-outlet>
+
+	<div class="push"></div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+
+
+	<!-- Copyright -->
+	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+	  © 2021 Copyright:
+	  <a class="text-reset fw-bold" href="#">Até Tougué Aristide</a>
+	</div>
+	<!-- Copyright -->
+</footer>
